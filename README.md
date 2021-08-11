@@ -116,9 +116,9 @@ The focus of this section is identifying bad characters so you can ensure they d
 **Command: python badcharizard.py**
 
 New Automation: 
-  Go to Immunity, enter in the below command.
-    !mona bytearray
-    !mona compare -f bytearray.bin -a <ESP Mem Address/Value>
+Go to Immunity, enter in the below command.
+**Command: !mona bytearray**
+**Command: !mona compare -f bytearray.bin -a <ESP Mem Address/Value>**
 ![image](https://user-images.githubusercontent.com/17016378/128985821-4903fbb3-d7b7-4151-8253-29bc22b8d6df.png)
 
 6. Go to Immunity, right-click on the ESP value, and click on "Follow in Dump."
