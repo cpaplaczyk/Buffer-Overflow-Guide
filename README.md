@@ -137,7 +137,7 @@ It's time to find what pointer you need to use to direct the program to your She
 6. JMP ESP converted to hex is FFE4, that's what you're looking for.
 7. Return to that command box you used for mona modules, this time type: **!mona find -s "\xff\xe4" -m essfunc.dll**
 8. The -m switch represents the module that you're trying to find the JMP ESP for, ensure that you swap out essfunc.dll with whatever the module value you wrote down in step 4.
-9. When you use the command, you will get a column of results that look like this:
+9. When you use the command, you will get a column of results that look like this (Review these for bad chars from above....):
 0x625011af
 0x625011bb
 0x625011c7
